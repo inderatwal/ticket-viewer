@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+    table #{table}
+      tr #{ticketNo}
+        th id
+        th subject 
+        th type
+      - for(var i=0;i<ticketNo; i++)
+        tr 
+          td #{id}
+	  td #{subject}
+          td #{type}
+       

@@ -1,0 +1,9 @@
+doctype html
+html
+ script type="text/javascript" src="get.js"
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+  body
+    block content
