@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  script(src="/public/javascripts/get.js")
   h1= title
   p Welcome to #{title}
     table #{table}
@@ -11,6 +12,6 @@ block content
       - for(var i=0;i<ticketNo; i++)
         tr 
           td #{id}
-	  td #{subject}
+          td #{subject}
           td #{type}
        

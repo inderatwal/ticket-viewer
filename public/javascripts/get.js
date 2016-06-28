@@ -1,3 +1,6 @@
+var http= require('http');
+var fs=require('fs');
+
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "https://gabruapparel.zendesk.com/api/v2/tickets.json", false);
