@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  script(type="text/javascript").
+    var c = "lulli"; 
+  - var ticketData = dData;
+  - var id= tId
+  h1
+    p #{title}
+    table #{table}
+      tr #{ticketNo}
+        th Requester
+        th Description 
+        th type 
+      - var count =0;  
+      - for(var i=0;i<ticketData.tickets.length; i++)
+          - count= count+1
+          if(id==count)
+            
+            tr
+              td 
+                a(id=ticketData.tickets[i].id)  #{ticketData.tickets[i].id} 
+              td 
+                a(id=ticketData.tickets[i].id)   #{ticketData.tickets[i].description}
+              td 
+                a(id=ticketData.tickets[i].id) #{ticketData.tickets[i].type}
+  
+
+
+
+

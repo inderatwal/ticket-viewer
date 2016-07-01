@@ -1,17 +1,98 @@
 extends layout
 
 block content
-  script(src="/public/javascripts/get.js")
+  //client side jade type javascripy
+  //getting ticket data from servside javascript. 
+  - var tickets = data;
   h1= title
   p Welcome to #{title}
-    table #{table}
+  div#page1
+    table#table1
       tr #{ticketNo}
-        th id
+        th#id id
         th subject 
         th type
-      - for(var i=0;i<ticketNo; i++)
-        tr 
-          td #{id}
-          td #{subject}
-          td #{type}
+        - for(var i=0;i<25; i++)
+          if(typeof tickets.tickets[i] !=='undefined')
+            tr(class ='btn' id=tickets.tickets[i].id)
+              td(onclick="move(this.id)")
+                a #{tickets.tickets[i].id} 
+              td(onclick="move(this.id)")
+                a #{tickets.tickets[i].subject}
+              td 
+                a #{tickets.tickets[i].type}
+              
+                
+
+
+  div#page2(style="display:none")
+    table#table2
+      tr #{ticketNo}
+        th#id id
+        th subject 
+        th type
+        - for(var i=25;i<50; i++)
+          if(typeof tickets.tickets[i] !=='undefined')
+            tr(class ='btn',id=tickets.tickets[i].id)
+              td(onclick="move(this.id)")
+                a(id=tickets.tickets[i].id)  #{tickets.tickets[i].id} 
+              td(onclick="move(this.id)")
+                a(id=tickets.tickets[i].id)   #{tickets.tickets[i].subject}
+              td 
+                a(id=tickets.tickets[i].i) #{tickets.tickets[i].type}
+              td
+                button(class='btn', id=tickets.tickets[i].id , method="GET",action='details') Details
+
+
+  div#page3(style="display:none")
+    table#table2
+      tr #{ticketNo}
+        th#id id
+        th subject 
+        th type
+        - for(var i=50;i<75; i++)
+          if(typeof tickets.tickets[i] !=='undefined')
+            tr(class ='btn',id=tickets.tickets[i].id)
+              td(onclick="move(this.id)")
+                a(id=tickets.tickets[i].id)  #{tickets.tickets[i].id} 
+              td(onclick="move(this.id)")
+                a(id=tickets.tickets[i].id)   #{tickets.tickets[i].subject}
+              td 
+                a(id=tickets.tickets[i].i) #{tickets.tickets[i].type}
+
+
+
+  div#page4(style="display:none")
+    table#table2
+      tr #{ticketNo}
+        th#id id
+        th subject 
+        th type
+        - for(var i=75;i<100; i++)
+          if(typeof tickets.tickets[i] !=='undefined')
+            tr(class ='btn', id=tickets.tickets[i].id)
+              td(onclick="move(this.id)")
+                a(id=tickets.tickets[i].id)  #{tickets.tickets[i].id} 
+              td(onclick="move(this.id)")
+                a(id=tickets.tickets[i].id)   #{tickets.tickets[i].subject}
+              td 
+                a(id=tickets.tickets[i].i) #{tickets.tickets[i].type}
+
+           
        
+
+
+  
+  if(tickets.tickets.length>25)
+  div#pages
+    a#p1 Page 1
+    if(tickets.tickets.length>50)
+      a#p2 Page 2 
+    if(tickets.tickets.length>75)
+      a#p3 Page 3 
+    if(tickets.tickets.length>99)
+      a#p4 Page 4 
+        
+
+
+
