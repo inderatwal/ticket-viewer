@@ -5,37 +5,89 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-table {
-  width: 640px;
-  border-collapse: collapse; 
-  border-spacing: 0;
-
-}
-th {
-  background: #F3F3F3;
-  font-weight: bold;
-}
-th, td { 
-  border: 1px solid #CCC; 
- /*border: 1px solid transparent;*/
-  height: 30px;
-}
-td {
-  border: 1px solid #CCC; 
-  background: #FAFAFA;
+#title {
   text-align: center;
 }
 
-td:last-child{
-  border: 1px solid transparent;
-background: #FFFFFF;
+/*set a fixed width to the table due to ease of use, and liquid layout is not required*/
+table {
+  width: 700px;
+  border-collapse: collapse; 
+  border-spacing: 0;
+  table-layout:fixed;
+}
+th {
+  background: rgba(235, 120, 54, 0.3);
+  font-weight: bold;
+  border: 1px solid #ccc; 
+  height: 50px;
 }
 
-/*td:hover { 
-background: #666; 
-color: #FFF; 
-}*/
 
-a {
-  color: #090909;
+td {
+  border-bottom: 1px solid rgba(235, 120, 54, 0.3);
+  text-align: center;
+  height: 50px;
+  /*next three lines are to eliminate extra characters in a 
+   subject box which could mess with the layout of table, 
+   instead we restrict character input to width, and end
+   with "..." */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+table tr:hover { 
+background-color: rgba(235, 109, 54, 0.5);  
+}
+
+#pagea {
+  padding:10px;
+  color: #0000f0;
+  cursor: pointer;
+  
+}
+
+#pagea:hover {
+  color: #000000;
+}
+
+#links {
+float:right;
+padding-bottom: 10px;
+padding-top: 10px;
+
+}
+#details {
+ width:700px;
+ border: 3px solid #ccc; 
+}
+
+#details p {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+#details a {
+ font-weight: normal;
+ display:inline;
+}
+
+
+
+
+
+#sticky {
+    background: #f4d5d5;
+    position:fixed;
+    top:0; 
+
+}
+
+
+
+
+
+
+

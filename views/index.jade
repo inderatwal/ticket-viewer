@@ -1,23 +1,45 @@
 extends layout
 
 block content
-  //client side jade type javascripy
+
   //getting ticket data from servside javascript. 
   - var tickets = data;
-  h1= title
-  p Welcome to #{title}
+  h1#title= title
+
+  //creating links for pages, determened on how many tickets there are
+   
+  div#pages
+    div#links
+      if(tickets.tickets.length>25) 
+        a(class='p1', id='pagea') Page 1
+        a(class='p2', id='pagea') Page 2 
+      if(tickets.tickets.length>50)
+        a(class='p3', id='pagea') Page 3 
+      if(tickets.tickets.length>75)
+        a(class='p4', id='pagea') Page 4 
+  
+  // creating the sticky header to be used when scrolling
+  // default is hidden, until scrolled down and activated
+  div#sticky(style="display:none")
+    table#table1
+        tr#list
+          th(style='width: 80px') ID
+          th(style='width: 450px') Subject 
+          th(style='width: 170px') Type    
+  
+
   div#page1
     table#table1
-      tr #{ticketNo}
-        th#id id
-        th subject 
-        th type
+      tr#list
+        th(style='width: 80px') ID
+        th(style='width: 450px') Subject 
+        th(style='width: 170px') Type
         - for(var i=0;i<25; i++)
           if(typeof tickets.tickets[i] !=='undefined')
             tr(class ='btn' id=tickets.tickets[i].id)
-              td(onclick="move(this.id)")
+              td
                 a #{tickets.tickets[i].id} 
-              td(onclick="move(this.id)")
+              td
                 a #{tickets.tickets[i].subject}
               td 
                 a #{tickets.tickets[i].type}
@@ -27,71 +49,68 @@ block content
 
   div#page2(style="display:none")
     table#table2
-      tr #{ticketNo}
-        th#id id
-        th subject 
-        th type
+      tr#list
+        th(style='width: 80px') ID
+        th(style='width: 450px') Subject 
+        th(style='width: 170px') Type
         - for(var i=25;i<50; i++)
           if(typeof tickets.tickets[i] !=='undefined')
             tr(class ='btn',id=tickets.tickets[i].id)
-              td(onclick="move(this.id)")
-                a(id=tickets.tickets[i].id)  #{tickets.tickets[i].id} 
-              td(onclick="move(this.id)")
-                a(id=tickets.tickets[i].id)   #{tickets.tickets[i].subject}
-              td 
-                a(id=tickets.tickets[i].i) #{tickets.tickets[i].type}
               td
-                button(class='btn', id=tickets.tickets[i].id , method="GET",action='details') Details
+                a #{tickets.tickets[i].id} 
+              td
+                a #{tickets.tickets[i].subject}
+              td 
+                a #{tickets.tickets[i].type}
+
 
 
   div#page3(style="display:none")
     table#table2
       tr #{ticketNo}
-        th#id id
-        th subject 
-        th type
+        th(style='width: 80px') ID
+        th(style='width: 450px') Subject 
+        th(style='width: 170px') Type
         - for(var i=50;i<75; i++)
           if(typeof tickets.tickets[i] !=='undefined')
             tr(class ='btn',id=tickets.tickets[i].id)
-              td(onclick="move(this.id)")
-                a(id=tickets.tickets[i].id)  #{tickets.tickets[i].id} 
-              td(onclick="move(this.id)")
-                a(id=tickets.tickets[i].id)   #{tickets.tickets[i].subject}
+              td
+                a #{tickets.tickets[i].id} 
+              td
+                a #{tickets.tickets[i].subject}
               td 
-                a(id=tickets.tickets[i].i) #{tickets.tickets[i].type}
+                a #{tickets.tickets[i].type}
 
 
 
   div#page4(style="display:none")
     table#table2
-      tr #{ticketNo}
-        th#id id
-        th subject 
-        th type
+      tr#list
+        th(style='width: 80px') ID
+        th(style='width: 450px') Subject 
+        th(style='width: 170px') Type
         - for(var i=75;i<100; i++)
           if(typeof tickets.tickets[i] !=='undefined')
             tr(class ='btn', id=tickets.tickets[i].id)
-              td(onclick="move(this.id)")
-                a(id=tickets.tickets[i].id)  #{tickets.tickets[i].id} 
-              td(onclick="move(this.id)")
-                a(id=tickets.tickets[i].id)   #{tickets.tickets[i].subject}
+              td
+                a #{tickets.tickets[i].id} 
+              td
+                a #{tickets.tickets[i].subject}
               td 
-                a(id=tickets.tickets[i].i) #{tickets.tickets[i].type}
-
-           
-       
+                a #{tickets.tickets[i].type}
 
 
   
-  if(tickets.tickets.length>25)
   div#pages
-    a#p1 Page 1
-    if(tickets.tickets.length>50)
-      a#p2 Page 2 
-    if(tickets.tickets.length>75)
-      a#p3 Page 3 
-    if(tickets.tickets.length>99)
-      a#p4 Page 4 
+    div#links
+      if(tickets.tickets.length>25) 
+        a(class='p1', id='pagea') Page 1
+        a(class='p2', id='pagea') Page 2 
+      if(tickets.tickets.length>50)
+        a(class='p3', id='pagea') Page 3 
+      if(tickets.tickets.length>75)
+        a(class='p4', id='pagea') Page 4  
+        
         
 
 

@@ -1,30 +1,29 @@
 extends layout
 
 block content
-  script(type="text/javascript").
-    var c = "lulli"; 
   - var ticketData = dData;
   - var id= tId
-  h1
-    p #{title}
-    table #{table}
-      tr #{ticketNo}
-        th Requester
-        th Description 
-        th type 
-      - var count =0;  
-      - for(var i=0;i<ticketData.tickets.length; i++)
-          - count= count+1
-          if(id==count)
-            
-            tr
-              td 
-                a(id=ticketData.tickets[i].requester_id)  #{ticketData.tickets[i].id} 
-              td 
-                a(id=ticketData.tickets[i].id)   #{ticketData.tickets[i].description}
-              td 
-                a(id=ticketData.tickets[i].id) #{ticketData.tickets[i].type}
-  
+  h1#title= title
+  - var count =0;  
+  - for(var i=0;i<ticketData.tickets.length; i++)
+    - count= i+1
+    if(id==ticketData.tickets[i].id)
+      div#details
+        p Requester ID: 
+          a #{ticketData.tickets[i].assignee_id} 
+        p Ticket Subject:       
+          a #{ticketData.tickets[i].subject}
+        p Ticket Description:     
+          a #{ticketData.tickets[i].description}
+        p Priority: 
+          a #{ticketData.tickets[i].priority}
+        p status: 
+          a #{ticketData.tickets[i].status}
+  button(class='backbtn') back to list
+    
+
+
+
 
 
 
