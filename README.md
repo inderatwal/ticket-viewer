@@ -17,3 +17,16 @@ and in the web browser go to:  http://localhost:8000/
 
 or change the 8000 with the port you had changed it too before, if changed. 
 
+Some basic information about the code
+
+app.js -> is a javascript file created by express framework, and contains all the needed bits and pieces for website to work
+routes/server.js -> handles all serverside functions including getting from API , and handles the routes from page to page
+public/javascripts/global.js -> handles all global javascript functions used in the html
+views/ *.jade  all files here are the seperate html pages, that extend the basic layout.jade page
+public/stylesheet/style.css -> css coding for html
+
+the account being used currently for running the program is a test account i made for zendesk, with username:inderpreet.atwal95@hotmail.com and password: test123
+
+this can also be changed if need be from the server.js file line 73
+
+all testing code has been commented out for final project.
