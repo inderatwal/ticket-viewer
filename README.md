@@ -33,3 +33,5 @@ this can also be changed if need be from the server.js file line 73
 
 
 all testing code has been commented out for final project.
+
+also note: tickets update when server is run again. since tickets load up when the server is loaded, not when website is loaded. 
