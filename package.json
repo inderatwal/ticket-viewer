@@ -14,7 +14,7 @@
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
     "Base64": "~1.0.0",
-    "btoa-atob": "~0.1.2",
+    "btoa": "~0.1.2",
     "xmlhttprequest": "~1.8.0",
     "morgan": "~1.7.0",
     "express": "~4.14.0",
