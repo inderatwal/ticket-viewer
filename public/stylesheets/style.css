@@ -6,6 +6,7 @@ body {
 }
 
 #title {
+ 
   text-align: center;
 }
 
@@ -74,8 +75,27 @@ padding-top: 10px;
  display:inline;
 }
 
+#backdiv{
+float:right;
+padding-top:10px;
+}
 
+#backbtn {
+	background-color:#f7b48f;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:17px;
+	padding:10px 42px;
+	text-decoration:none;
 
+}
+
+#backbtn:hover {
+	background-color:#f4d5d5;
+}
 
 
 #sticky {

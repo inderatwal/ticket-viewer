@@ -10,7 +10,7 @@ block content
     if(id==ticketData.tickets[i].id)
       div#details
         p Requester ID: 
-          a #{ticketData.tickets[i].assignee_id} 
+          a #{ticketData.tickets[i].requester_id} 
         p Ticket Subject:       
           a #{ticketData.tickets[i].subject}
         p Ticket Description:     
@@ -19,7 +19,10 @@ block content
           a #{ticketData.tickets[i].priority}
         p status: 
           a #{ticketData.tickets[i].status}
-  button(class='backbtn') back to list
+        p Created on: 
+          a #{ticketData.tickets[i].created_at}
+  div#backdiv
+    button(class='backbtn' id='backbtn') back to list
     
 
 

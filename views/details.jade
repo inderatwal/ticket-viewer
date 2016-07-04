@@ -1,16 +1,19 @@
 extends layout
 
 block content
+  // getting variables from serverside
   - var ticketData = dData;
   - var id= tId
   h1#title= title
   - var count =0;  
   - for(var i=0;i<ticketData.tickets.length; i++)
     - count= i+1
+    // using if statement to check against clicked ticket, with ticket array
     if(id==ticketData.tickets[i].id)
+    // if ticket matches a ticket in ticket array then display its data
       div#details
         p Requester ID: 
-          a #{ticketData.tickets[i].assignee_id} 
+          a #{ticketData.tickets[i].requester_id} 
         p Ticket Subject:       
           a #{ticketData.tickets[i].subject}
         p Ticket Description:     
@@ -19,12 +22,16 @@ block content
           a #{ticketData.tickets[i].priority}
         p status: 
           a #{ticketData.tickets[i].status}
-  button(class='backbtn') back to list
+        p Created on: 
+          a #{ticketData.tickets[i].created_at}
+  div#backdiv
+    button(class='backbtn' id='backbtn') back to list
     
 
 
 
-
+curl https://gabruapparel.zendesk.com/api/v2/job_statuses/104.json \
+  -v -u inderpreet.atwal95@hotmail.com:Karan1998
 
 
 

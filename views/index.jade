@@ -6,8 +6,7 @@ block content
   - var tickets = data;
   h1#title= title
 
-  //creating links for pages, determened on how many tickets there are
-   
+  //creating links for pages, determened on how many tickets there are 
   div#pages
     div#links
       if(tickets.tickets.length>25) 
@@ -25,15 +24,18 @@ block content
         tr#list
           th(style='width: 80px') ID
           th(style='width: 450px') Subject 
-          th(style='width: 170px') Type    
+          th(style='width: 85px') Type 
+          th(style='width: 85px') Status   
   
-
+  // each page given its own table, table 1 viewed as default
   div#page1
     table#table1
       tr#list
         th(style='width: 80px') ID
         th(style='width: 450px') Subject 
-        th(style='width: 170px') Type
+        th(style='width: 85px') Type
+        th(style='width: 85px') Status
+        // jade for and if loops used to load data into tables
         - for(var i=0;i<25; i++)
           if(typeof tickets.tickets[i] !=='undefined')
             tr(class ='btn' id=tickets.tickets[i].id)
@@ -43,16 +45,19 @@ block content
                 a #{tickets.tickets[i].subject}
               td 
                 a #{tickets.tickets[i].type}
+              td 
+                a #{tickets.tickets[i].status}
               
                 
 
-
+  // page 2 of table, only viewed if clicked on page 2
   div#page2(style="display:none")
     table#table2
       tr#list
         th(style='width: 80px') ID
         th(style='width: 450px') Subject 
-        th(style='width: 170px') Type
+        th(style='width: 85px') Type
+        th(style='width: 85px') Status
         - for(var i=25;i<50; i++)
           if(typeof tickets.tickets[i] !=='undefined')
             tr(class ='btn',id=tickets.tickets[i].id)
@@ -62,15 +67,18 @@ block content
                 a #{tickets.tickets[i].subject}
               td 
                 a #{tickets.tickets[i].type}
+              td 
+                a #{tickets.tickets[i].status}
 
 
-
+  // page 3 of table, only viewed if clicked on page 2
   div#page3(style="display:none")
-    table#table2
+    table#table3
       tr #{ticketNo}
         th(style='width: 80px') ID
         th(style='width: 450px') Subject 
-        th(style='width: 170px') Type
+        th(style='width: 85px') Type
+        th(style='width: 85px') Status 
         - for(var i=50;i<75; i++)
           if(typeof tickets.tickets[i] !=='undefined')
             tr(class ='btn',id=tickets.tickets[i].id)
@@ -80,15 +88,18 @@ block content
                 a #{tickets.tickets[i].subject}
               td 
                 a #{tickets.tickets[i].type}
+              td 
+                a #{tickets.tickets[i].status}
 
 
-
+  // page 4 of table, only viewed if clicked on page 2
   div#page4(style="display:none")
-    table#table2
+    table#table4
       tr#list
         th(style='width: 80px') ID
         th(style='width: 450px') Subject 
-        th(style='width: 170px') Type
+        th(style='width: 85px') Type
+        th(style='width: 85px') Status 
         - for(var i=75;i<100; i++)
           if(typeof tickets.tickets[i] !=='undefined')
             tr(class ='btn', id=tickets.tickets[i].id)
@@ -98,6 +109,8 @@ block content
                 a #{tickets.tickets[i].subject}
               td 
                 a #{tickets.tickets[i].type}
+              td 
+                a #{tickets.tickets[i].status}
 
 
   
